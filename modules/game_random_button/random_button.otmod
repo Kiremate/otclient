@@ -1,0 +1,9 @@
+Module
+  name: game_random_button
+  description: Module to test a button that moves randomly.
+  author: YourName
+  website: http://yourwebsite.com
+  sandboxed: true
+  scripts: [ random_button.lua ]
+  @onLoad: init()
+  @onUnload: terminate()

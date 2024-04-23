@@ -1,0 +1,13 @@
+MainWindow
+  !text: tr('Random Button Pop')
+  size: 800 300
+  @onEscape: self:hide()
+
+  Button
+    id: randomButton
+    text: Jump!
+    size: 100 25
+    margin-top: 125
+    margin-left: 275
+    @canUpdateMargin: function(self, newMargin) if modules.client_options.getOption('dontStretchShrink') then return self:getMarginBottom() end return math.max(math.min(newMargin, self:getParent():getHeight() - 300), 100) end
+    @onGeometryChange: function(self) self:setMarginBottom(math.min(math.max(self:getParent():getHeight() - 300, 100), self:getMarginBottom())) end
